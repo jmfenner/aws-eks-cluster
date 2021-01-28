@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: echo-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  tls:
+  - hosts:
+    - echo1.saic-research.com
+    - echo2.saic-research.com
+    secretName: echo-tls
+  rules:
+  - host: echo1.saic-research.com
+    http:
+      paths:
+      - backend:
+          serviceName: echo1
+          servicePort: 80
+  - host: echo2.saic-research.com
+    http:
+      paths:
+      - backend:
+          serviceName: echo2
+          servicePort: 80
