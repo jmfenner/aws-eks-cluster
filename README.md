@@ -2,7 +2,9 @@
 Create and test EKS cluster with both on-demand and spot node groups and cluster autoscaler. Nginx/ELB ingress controller. Some demo apps.
 
 ## Initial Setup of EKS Cluster
-Run the script createCluster.sh
+Update the createCluster.sh script with your AWS account ID, then run it. It may take upwards of half an hour to run and create the assets. 
+
+The script will create a custom delete script you can use later to tear the cluster down.
 
 Then finish cluster configuration per the notes when the script completes.
 
