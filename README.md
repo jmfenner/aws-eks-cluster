@@ -1,6 +1,17 @@
 # aws-eks-cluster
 Create and test EKS cluster with both on-demand and spot node groups and cluster autoscaler. Nginx/ELB ingress controller. Some demo apps.
 
+## Prerequisites
+* You need to be able to run bash scripts (I use the shell on a Macbook Pro).
+* Docker for Desktop 3.1.0 with Kubernetes 1.19.3. In addition to the kubectl utility, I add kubectx (via brew).
+* eksctl (via brew)
+* aws-iam-authenticator (via brew)
+* aws-sam-cli (via brew)
+* curl
+* wget
+* aws-instance-selector (via brew tap aws/tap && brew install aws-instance-selector)
+* Lens (from https://k8slens.dev) is not required, but cool.
+
 ## Initial Setup of EKS Cluster
 Update the createCluster.sh script with your AWS account ID, then run it. It may take upwards of half an hour to run and create the assets. 
 
